@@ -1,0 +1,535 @@
+@font-face {
+  font-family: "Virgil";
+  src: url("./Virgil.woff2");
+}
+
+/* .gradient-background {
+  background: linear-gradient(292deg, #020024, #0a0a49, #7c0220);
+  background-size: 180% 180%;
+  animation: gradient-animation 6s ease infinite;
+  color: aliceblue;
+} */
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.body--dashboard {
+  background-color: #080710;
+  /* background-image: url("./dashboardBG.jpg");
+  background-size: cover; */
+  background: rgb(2, 0, 36);
+  background: -moz-linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(10, 10, 73, 1) 35%,
+    rgba(124, 2, 32, 1) 100%
+  );
+  background: -webkit-linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(10, 10, 73, 1) 35%,
+    rgba(124, 2, 32, 1) 100%
+  );
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(10, 10, 73, 1) 35%,
+    rgba(124, 2, 32, 1) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#020024",endColorstr="#7c0220",GradientType=1);
+  color: aliceblue;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  backdrop-filter: blur(10px);
+}
+
+/* TODO INPUT (NEW TODO) */
+
+.form__group {
+  position: relative;
+  padding: 15px 0 0;
+  margin-top: 10px;
+  width: 50%;
+}
+.form__field {
+  font-family: inherit;
+  width: 100%;
+  border: 0;
+  border-bottom: 2px solid #9b9b9b;
+  outline: 0;
+  font-size: 1.3rem;
+  color: #fff;
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.2s;
+}
+.form__field::placeholder {
+  color: transparent;
+}
+.form__field:placeholder-shown ~ .form__label {
+  font-size: 1.3rem;
+  cursor: text;
+  top: 20px;
+}
+.form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 1rem;
+  color: #9b9b9b;
+}
+.form__field:focus {
+  padding-bottom: 6px;
+  /* font-weight: 700; */
+  border-width: 3px;
+  border-image: linear-gradient(to right, #11998e, #38ef7d);
+  border-image-slice: 1;
+}
+.form__field:focus ~ .form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 1rem;
+  color: #11998e;
+  /* font-weight: 700; */
+}
+/* reset input */
+.form__field:required,
+.form__field:invalid {
+  box-shadow: none;
+}
+/* demo */
+.newTodo {
+  font-family: "Montserrat Alternates", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  margin-left: 800px;
+  width: 500px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  margin: auto;
+  min-width: 600px;
+  padding: 10px;
+}
+
+/* * {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+} */
+
+/* body {
+  font-family: "Roboto", sans-serif;
+  background: #333;
+  color: black;
+} */
+
+.todo--container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+}
+
+.todo--container > div {
+  height: 210px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+
+  transition: all ease 0.5s;
+}
+
+.todo--container > div:hover {
+  transform: scale(0.98);
+  opacity: 0.7;
+}
+
+div h2 {
+  font-size: 2em;
+  margin: 10px;
+}
+
+div p {
+  font-size: 1.1em;
+}
+
+.todo--container > div:nth-of-type(1) {
+  grid-column: 1 / 3;
+}
+
+.todo--container > div:nth-of-type(6) {
+  grid-column: 3 / 5;
+}
+
+.todo--container > div:nth-of-type(9) {
+  grid-column: 3 / 5;
+}
+
+.todo--container > div:nth-of-type(10) {
+  grid-column: 1 / 3;
+}
+
+.todo--bg-1 {
+  background-image: url(https://i.postimg.cc/1RTV9F6V/filip-zrnzevic-Qs-WG0kj-PQRY-unsplash.jpg);
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.09);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5.8px);
+  -webkit-backdrop-filter: blur(5.8px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.todo--bg-2 {
+  background: url(https://i.postimg.cc/N04rYP7Q/henry-be-Iicyia-PYGGI-unsplash.jpg);
+}
+
+/* User */
+.user--header {
+  margin: auto;
+  width: 15%;
+  padding: 10px;
+  font-family: "Montserrat Alternates", sans-serif;
+  text-align: center;
+  font-weight: 300;
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background-color: rgba(17, 25, 40, 0.75);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.125);
+}
+
+/* L O A D I N G */
+
+* {
+  box-sizing: border-box;
+}
+.loading--container {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  /* background: #0c0c0d; */
+  background-image: url("./loadingBG.jpg");
+  background-size: cover;
+}
+/* .loading--lollypop,
+.clickbait,
+.by-jasper {
+  font: 12px Arial;
+}
+.loading--lollypop a,
+.clickbait a,
+.by-jasper a {
+  text-decoration: none;
+  color: rgba(131, 125, 217, 1);
+}
+.loading--clickbait {
+  margin: 1em;
+} */
+.loading--loading-bar {
+  width: 301px;
+  background: #cecece;
+  padding: 2px;
+  border: 1px solid rgba(131, 125, 217, 1);
+  border-radius: 6px;
+  box-shadow: 0 0 20px 0 rgba(131, 125, 217, 0.5);
+  margin: auto;
+}
+.loading--loading-bar--progress {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  align-content: center;
+}
+.loading--loading-bar--progress span {
+  margin: auto;
+  background: #0c0c0d;
+  border-radius: 4px;
+  flex-basis: 11%;
+  flex-grow: 1;
+  flex-shrink: 1;
+  height: 20px;
+  animation: FadeIn 0.5s ease;
+  transition: all 1s cubic-bezier(0.17, 0.67, 0.88, 0.17);
+}
+.loading--loading-bar--progress span:first-of-type {
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+.loading--loading-bar--progress span:last-of-type {
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+.loading--by-jasper {
+  position: absolute;
+  bottom: 2em;
+  right: 2em;
+}
+@keyframes FadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.1);
+    background: rgb(128, 0, 0);
+    border-radius: 4px;
+  }
+  85% {
+    opacity: 1;
+    background: #0c0c0d;
+    background: linear-gradient(180deg, #c74799 0%, #c74799 56%, #e940f1 100%);
+    border-radius: 0;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+  }
+  100% {
+    transform: scale(1);
+    background: #0c0c0d;
+    background: linear-gradient(180deg, #c74799 0%, #c74799 56%, #e940f1 100%);
+    border-radius: 0;
+  }
+}
+.loading--loading-bar--progress span:nth-child(1n) {
+  animation-delay: 0.15s;
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+}
+.loading--loading-bar--progress span:nth-child(2n) {
+  animation-delay: 0.3s;
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+}
+.loading--loading-bar--progress span:nth-child(3n) {
+  animation-delay: 0.45s;
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+}
+.loading--loading-bar--progress span:nth-child(4n) {
+  animation-delay: 0.6s;
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+}
+.loading--loading-bar--progress span:nth-child(5n) {
+  animation-delay: 0.75s;
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+}
+.loading--loading-bar--progress span:nth-child(6n) {
+  animation-delay: 0.9s;
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+}
+.loading--loading-bar--progress span:nth-child(7n) {
+  animation-delay: 1.05s;
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+}
+.loading--loading-bar--progress span:nth-child(8n) {
+  animation-delay: 1.2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+}
+.loading--loading-bar--progress span:nth-child(9n) {
+  animation-delay: 1.35s;
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+}
+.loading--loading-bar--progress span:nth-child(10n) {
+  animation-delay: 1.5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+}
+.loading--loading-bar--progress span:nth-child(11n) {
+  animation-delay: 1.65s;
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+}
+.loading--loading-bar--progress span:nth-child(12n) {
+  animation-delay: 1.8s;
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+}
+.loading--loading-bar--progress .first {
+  border-top-left-radius: 4px !important;
+  border-bottom-left-radius: 4px !important;
+}
+.loading--loading-bar--progress .last {
+  border-top-right-radius: 4px !important;
+  border-bottom-right-radius: 4px !important;
+}
+
+.loading--hide {
+  display: none;
+}
+
+.visibilityHidden {
+  visibility: hidden;
+}
+
+.visibilityVisible {
+  visibility: visible;
+}
+
+/* N A V B A R */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;1,300&display=swap");
+.back {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: url(https://pp.userapi.com/c841122/v841122831/327e/nHt-92F6yc4.jpg)
+    no-repeat top center #efeff1;
+  background-size: cover;
+}
+.thx {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 15px;
+}
+
+nav {
+  width: 100%;
+  position: fixed;
+  top: 20px;
+  text-align: center;
+}
+nav a {
+  font-family: "Montserrat Alternates", sans-serif;
+  font-weight: 500;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: aliceblue;
+  margin: 0 15px;
+  font-size: 16px;
+  letter-spacing: 1px;
+  position: relative;
+  display: inline-block;
+  font-weight: 300;
+}
+nav a:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  background: aliceblue;
+  top: 47%;
+  animation: out 0.2s cubic-bezier(1, 0, 0.58, 0.97) 1 both;
+}
+nav a:hover:before {
+  animation: in 0.2s cubic-bezier(1, 0, 0.58, 0.97) 1 both;
+}
+@keyframes in {
+  0% {
+    width: 0;
+    left: 0;
+    right: auto;
+  }
+  100% {
+    left: 0;
+    right: auto;
+    width: 100%;
+  }
+}
+@keyframes out {
+  0% {
+    width: 100%;
+    left: auto;
+    right: 0;
+  }
+  100% {
+    width: 0;
+    left: auto;
+    right: 0;
+  }
+}
+@keyframes show {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.childNav a:nth-child(1) {
+  animation: show 0.2s 0.3s ease 1 both;
+}
+.childNav a:nth-child(2) {
+  animation: show 0.2s 0.4s ease 1 both;
+}
+.childNav a:nth-child(3) {
+  animation: show 0.2s 0.5s ease 1 both;
+}
+.childNav a:nth-child(4) {
+  animation: show 0.2s 0.6s ease 1 both;
+}
+.childNav a:nth-child(5) {
+  animation: show 0.2s 0.7s ease 1 both;
+}
+
+.loading--after {
+  margin-top: 80px;
+  min-height: 1080px;
+  height: auto;
+}
+
+.todo--container {
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+  font-family: "Montserrat Alternates Thin", sans-serif;
+  font-weight: 300;
+  font-size: 13px;
+  text-align: center;
+}
+
+.todo--done {
+  font-style: italic;
+  font-family: "Montserrat Alternates Light", sans-serif;
+}
+
+.container {
+  margin-top: 0;
+}
+
+.artists--section {
+  padding: 50px;
+}
+
+.navBar--icon {
+  width: 20px;
+  color: aliceblue;
+}
+
+section {
+  margin-top: 300px;
+}
+
+.container {
+  margin-top: -270px;
+}
+
+.form-floating {
+  width: 300px;
+  color: black;
+}
