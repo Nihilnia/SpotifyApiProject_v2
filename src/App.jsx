@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-import { userzCollection, db } from "./Firebase";
+import { userzCollection, countEmCollection, db } from "./Firebase";
 import { onSnapshot, doc, addDoc, deleteDoc, setDoc } from "firebase/firestore";
 
 import Login from "./Login/Login";
@@ -12,6 +12,20 @@ import FollowingPlaylists from "./FollowingPlaylists/FollowingPlaylists";
 import Profile from "./Profile/Profile";
 
 export default function App() {
+  //!_countEm
+  const ddate = new Date();
+  const yyyy = ddate.getFullYear();
+  let mm = ddate.getMonth() + 1;
+  let dd = ddate.getDate();
+
+  let formatDate = `${dd}/ ${mm}/ ${yyyy}`;
+
+  // console.log(formatDate);
+
+  const generateRandNumb = (max) => {
+    return Math.floor(Math.random() * max);
+  };
+
   const [userInput, setUserInput] = useState({
     userName: "",
     passWord: "",
@@ -44,11 +58,9 @@ export default function App() {
   const [fromPage, setFromPage] = useState("Login");
 
   const handleUserEnter = (e) => {
-    console.log("asd");
-    console.log(e.click);
     e.preventDefault();
 
-    console.log("User pressed the enter..");
+    console.log("User tried to login.");
     // console.log(e.target);
 
     console.log(`
@@ -61,27 +73,42 @@ export default function App() {
     // console.log(dbUserz);
     switch (page) {
       case "Register":
-        if (findUser.length < 1) {
-          //?Register the user
-          const registerUser = async () => {
-            //? Getting the reference of the process.
-            const newUserRef = await addDoc(userzCollection, userInput);
-          };
-
-          registerUser();
-          setModal(() => {
-            return {
-              isShow: true,
-              userName: userInput.userName,
-              information: `Successfuly registered.`,
+        if (userInput.userName.length >= 3 && userInput.passWord.length >= 3) {
+          if (findUser.length < 1) {
+            //?Register the user
+            const registerUser = async () => {
+              //? Getting the reference of the process.
+              const newUserRef = await addDoc(userzCollection, {
+                userName: userInput.userName,
+                passWord: userInput.passWord,
+                time: ddate,
+                date: formatDate,
+              });
             };
-          });
+
+            registerUser();
+            setModal(() => {
+              return {
+                isShow: true,
+                userName: userInput.userName,
+                information: `Successfuly registered.`,
+              };
+            });
+          } else {
+            setModal(() => {
+              return {
+                isShow: true,
+                userName: userInput.userName,
+                information: `This username is taken`,
+              };
+            });
+          }
         } else {
           setModal(() => {
             return {
               isShow: true,
               userName: userInput.userName,
-              information: `This username is taken`,
+              information: `Username and password must be at least 3 characters long.`,
             };
           });
         }
@@ -89,33 +116,52 @@ export default function App() {
 
       case "Login":
         //? Login control
-        if (findUser.length > 0) {
-          if (findUser[0].passWord == userInput.passWord) {
-            // console.log("welcome mf.");
-            setLoggedUser(() => {
-              return findUser[0];
-            });
-            setPage("Dashboard");
+        if (userInput.userName.length >= 3 && userInput.passWord.length >= 3) {
+          if (findUser.length > 0) {
+            if (findUser[0].passWord == userInput.passWord) {
+              // console.log("welcome mf.");
+              console.log(
+                `%cUsername and password mathched. Welcome ${findUser[0].userName}.`,
+                "color: orange"
+              );
+              setLoggedUser(() => {
+                return findUser[0];
+              });
+              setPage("Dashboard");
+            } else {
+              // console.log("Password is wrong mf.");
+              console.log(
+                `%cPassword is wrong for user: ${findUser[0].userName}.`,
+                "color: orange"
+              );
+              setModal(() => {
+                return {
+                  isShow: true,
+                  userName: userInput.userName,
+                  information: `Password is wrong`,
+                };
+              });
+            }
           } else {
-            // console.log("Password is wrong mf.");
+            // console.log("There is no user like that. Wrong mf.");
             setModal(() => {
               return {
                 isShow: true,
                 userName: userInput.userName,
-                information: `Password is wrong`,
+                information: "User not found",
               };
             });
           }
         } else {
-          // console.log("There is no user like that. Wrong mf.");
           setModal(() => {
             return {
               isShow: true,
               userName: userInput.userName,
-              information: "User not found",
+              information: `Username and password must be at least 3 characters long.`,
             };
           });
         }
+
         break;
     }
   };
@@ -136,13 +182,16 @@ export default function App() {
 
   useEffect(() => {
     const unsubscribe = onSnapshot(userzCollection, (snapshot) => {
+      handleTraffic("unregisteredUser", page);
       snapshot.docs.length == 0
         ? console.log("%cDatabase is empty now..", "color: orange")
         : console.log("%cDatabase is ready..", "color: orange");
 
-      console.log(
-        `At total there are ${snapshot.docs.length} userz in the database..`
-      );
+      // console.log(
+      //   `At total there are ${snapshot.docs.length} users in the database..`
+      // );
+      // console.log(generateRandNumb(1000));
+
       //? oldschool controllin to database changes
 
       //! READING:
@@ -171,6 +220,20 @@ export default function App() {
   // console.log(`Logged user:`);
   // console.log(loggedUser);
 
+  const handleTraffic = (whoIsIt, fPage) => {
+    const doCount = async () => {
+      const newCountRef = await addDoc(countEmCollection, {
+        time: ddate,
+        date: formatDate,
+        page: fPage != null ? fPage : page,
+        randNum: generateRandNumb(1000),
+        user: whoIsIt,
+      });
+    };
+
+    doCount();
+  };
+
   return (
     <>
       {page == "Login" && (
@@ -180,6 +243,7 @@ export default function App() {
           handlePaging={handlePaging}
           modal={modal}
           setModal={setModal}
+          handleTraffic={handleTraffic}
         />
       )}
       {page == "Register" && (
@@ -190,6 +254,7 @@ export default function App() {
           modal={modal}
           setModal={setModal}
           setUserInput={setUserInput}
+          handleTraffic={handleTraffic}
         />
       )}
       {page == "Dashboard" && (
@@ -199,6 +264,7 @@ export default function App() {
           handlePaging={handlePaging}
           loggedUser={loggedUser}
           fromPage={fromPage}
+          handleTraffic={handleTraffic}
         />
       )}
       {page == "Followin' Artists" && (
@@ -207,6 +273,7 @@ export default function App() {
           handleUserEnter={handleUserEnter}
           handlePaging={handlePaging}
           loggedUser={loggedUser}
+          handleTraffic={handleTraffic}
         />
       )}
       {page == "Followin' Songs" && (
@@ -215,6 +282,7 @@ export default function App() {
           handleUserEnter={handleUserEnter}
           handlePaging={handlePaging}
           loggedUser={loggedUser}
+          handleTraffic={handleTraffic}
         />
       )}
       {page == "Followin' Playlists" && (
@@ -223,10 +291,8 @@ export default function App() {
           handleUserEnter={handleUserEnter}
           handlePaging={handlePaging}
           loggedUser={loggedUser}
+          handleTraffic={handleTraffic}
         />
-      )}
-      {page == "Profile" && (
-        <Profile handlePaging={handlePaging} loggedUser={loggedUser} />
       )}
     </>
   );

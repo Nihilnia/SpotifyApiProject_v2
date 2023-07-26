@@ -25,7 +25,7 @@ export default function Login(props) {
         <div className="shape--login"></div>
       </div>
       <form className="form--login" onSubmit={(e) => handleUserEnter(e)}>
-        <h3>Login Here</h3>
+        <h3>Login</h3>
 
         <label htmlFor="username" className="label--login">
           Username
@@ -51,17 +51,16 @@ export default function Login(props) {
           required
         />
 
-        <button
-          className="button--login"
-          onClick={(e) => {
-            e.preventDefault();
-            handleUserEnter(e);
-          }}
-        >
+        <button className="button--login" onClick={(e) => handleUserEnter(e)}>
           Log In
         </button>
         <a
-          style={{ color: "aliceblue" }}
+          style={{
+            color: "#0096FF",
+            textDecoration: "underline",
+            textAlign: "center",
+            display: "block",
+          }}
           onClick={(e) => {
             handlePaging(e, "Register");
           }}

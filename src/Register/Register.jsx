@@ -1,12 +1,23 @@
 import "./register.css";
 import Modal from "../Modal/Modal";
+import { useEffect } from "react";
 
 export default function Register(props) {
   document.body.classList.remove("body--login");
   document.body.classList.add("body--register");
 
-  const { handleInputChange, handleUserEnter, handlePaging, modal, setModal } =
-    props;
+  const {
+    handleInputChange,
+    handleUserEnter,
+    handlePaging,
+    modal,
+    setModal,
+    handleTraffic,
+  } = props;
+
+  useEffect(() => {
+    handleTraffic("unregisteredUser", "Register");
+  }, []);
 
   return (
     <>
@@ -16,7 +27,7 @@ export default function Register(props) {
         <div className="shape--register"></div>
       </div>
       <form className="form--register" onSubmit={(e) => handleUserEnter(e)}>
-        <h3>Register Here</h3>
+        <h3>Register</h3>
 
         <label htmlFor="username" className="label--register">
           Username
@@ -47,7 +58,12 @@ export default function Register(props) {
           Register
         </button>
         <a
-          style={{ color: "aliceblue" }}
+          style={{
+            color: "#0096FF",
+            textDecoration: "underline",
+            textAlign: "center",
+            display: "block",
+          }}
           onClick={(e) => {
             handlePaging(e, "Login");
           }}

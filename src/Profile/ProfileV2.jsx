@@ -10,7 +10,7 @@ import { onSnapshot, doc, addDoc, deleteDoc, setDoc } from "firebase/firestore";
 import defPP from "../Profile/Gloria_2.gif";
 
 export default function ProfileV2(props) {
-  const { loggedUser, toggleProfile } = props;
+  const { loggedUser, toggleProfile, handleTraffic } = props;
 
   //User' s collections
   const [userSongz, setUserSongz] = useState([]);
@@ -44,6 +44,7 @@ export default function ProfileV2(props) {
     const unsubscribe3 = onSnapshot(
       followingPlaylistzCollection,
       (snapshot) => {
+        handleTraffic(loggedUser.userName, "Profile");
         const userzFollowingPlaylistz = snapshot.docs.map((doc) => {
           //?Map returns array.. key point!
           return { id: doc.id, ...doc.data() };
@@ -111,8 +112,15 @@ export default function ProfileV2(props) {
               <div className="job">_プロジェクト</div>
 
               <div className="actions">
-                <button className="btn">Logout</button>
-                <button className="btn">Message</button>
+                <button
+                  className="btn"
+                  onClick={() => {
+                    window.location.replace("/");
+                  }}
+                >
+                  Logout
+                </button>
+                <button className="btn">Back</button>
               </div>
             </div>
 

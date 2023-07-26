@@ -20,7 +20,7 @@ export default function FollowingPlaylists(props) {
     .querySelector(".loading--after")
     .classList.add("visibilityHidden", "visibilityVisible");
 
-  const { loggedUser, handlePaging } = props;
+  const { loggedUser, handlePaging, handleTraffic } = props;
   // console.log(loggedUser);
 
   const [allFollowingPlaylistz, setAllFollowingPlaylistz] = useState(null);
@@ -30,9 +30,13 @@ export default function FollowingPlaylists(props) {
 
   useEffect(() => {
     const unsubscribe = onSnapshot(followingPlaylistzCollection, (snapshot) => {
-      snapshot.docs.length == 0
-        ? console.log("%cDatabase is empty now..", "color: orange")
-        : console.log("%cDatabase is ready..", "color: orange");
+      handleTraffic(loggedUser.userName);
+
+      console.log("User now at Following Playlists page.");
+      console.log(
+        "%cThe database was read, user' s favorite playlists showing up..",
+        "color: orange"
+      );
 
       //! READING:
       const userzFollowingPlaylistz = snapshot.docs.map((doc) => {
@@ -271,7 +275,11 @@ export default function FollowingPlaylists(props) {
   return (
     <>
       {isProfile && (
-        <ProfileV2 loggedUser={loggedUser} toggleProfile={setIsProfile} />
+        <ProfileV2
+          loggedUser={loggedUser}
+          toggleProfile={setIsProfile}
+          handleTraffic={handleTraffic}
+        />
       )}
       <div className="loading--after visibilityHidden">
         <div className="navbar--back"></div>
@@ -292,7 +300,15 @@ export default function FollowingPlaylists(props) {
             </svg>
           </a>
           &nbsp;|&nbsp;
-          <a onClick={(e) => handlePaging(e, "Followin' Artists")}>
+          <a
+            onClick={(e) => {
+              console.log(
+                "%cUser clicked for 'Artists' page.",
+                "color: orange"
+              );
+              handlePaging(e, "Followin' Artists");
+            }}
+          >
             Your Artists&nbsp;
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -306,8 +322,16 @@ export default function FollowingPlaylists(props) {
             </svg>
           </a>
           &nbsp;|&nbsp;
-          <a onClick={(e) => handlePaging(e, "Followin' Songs")}>
-            Your Songs&nbsp;
+          <a
+            onClick={(e) => {
+              console.log(
+                "%cUser clicked for Your Tracks page.",
+                "color: orange"
+              );
+              handlePaging(e, "Followin' Songs");
+            }}
+          >
+            Your Tracks&nbsp;
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="16"
@@ -324,7 +348,15 @@ export default function FollowingPlaylists(props) {
           Completed&nbsp;&nbsp;<i className="fa-solid fa-check fa-lg"></i>
         </a>
         &nbsp;|&nbsp; */}
-          <a onClick={(e) => handlePaging(e, "Followin' Playlists")}>
+          <a
+            onClick={(e) => {
+              console.log(
+                "%cUser clicked for 'Your Playlist' page.",
+                "color: orange"
+              );
+              handlePaging(e, "Followin' Playlists");
+            }}
+          >
             Your Playlists&nbsp;
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -339,7 +371,16 @@ export default function FollowingPlaylists(props) {
           </a>
           &nbsp;|&nbsp;
           <a
-            onClick={(e) => {
+            onClick={() => {
+              console.log(
+                "%cUser clicked for 'Profile' page.",
+                "color: orange"
+              );
+              console.log("User now at 'Profile' page.");
+              console.log(
+                "%cThe database was read, user' s intel showing up..",
+                "color: orange"
+              );
               setIsProfile((prev) => !prev);
             }}
           >

@@ -3,6 +3,7 @@ import userNotFound from "./userNotFound.png";
 import userNameTaken from "./userNameTaken.png";
 import wrongPass from "./wrongPass.png";
 import confetti from "./confetti.png";
+import security from "./security.png";
 
 export default function Modal(props) {
   const { modal, setModal } = props;
@@ -11,6 +12,13 @@ export default function Modal(props) {
   let informationToShow = null;
   let gestureToShow = null;
   switch (modal.information) {
+    case "Username and password must be at least 3 characters long.":
+      svgToShow = security;
+      informationToShow =
+        "Username and password must be at least 3 characters long.";
+      gestureToShow = "Try again";
+      break;
+
     case "User not found":
       svgToShow = userNotFound;
       informationToShow = "User not found.";

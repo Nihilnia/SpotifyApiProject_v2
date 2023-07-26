@@ -27,7 +27,7 @@ export default function Dashboard(props) {
   document.body.classList.add("gradient-background");
   document.body.classList.add("body--newTodo");
 
-  const { loggedUser, fromPage, handlePaging } = props;
+  const { loggedUser, fromPage, handlePaging, handleTraffic } = props;
 
   const [accessToken, setAccessToken] = useState("");
   const [artists, setArtists] = useState([]);
@@ -89,6 +89,8 @@ export default function Dashboard(props) {
     const unsubscribe3 = onSnapshot(
       followingPlaylistzCollection,
       (snapshot) => {
+        console.log("User now at Dashboard page.");
+        handleTraffic(loggedUser.userName);
         const userzFollowingPlaylistz = snapshot.docs.map((doc) => {
           //?Map returns array.. key point!
           return { id: doc.id, ...doc.data() };
@@ -140,7 +142,6 @@ export default function Dashboard(props) {
       .then((response) => response.json())
       .then((data) => {
         setTracks(() => {
-          console.log(data.tracks.items);
           return data.tracks.items;
         });
       });
@@ -171,9 +172,23 @@ export default function Dashboard(props) {
 
   // console.log(document.querySelector("#root"));
 
+  //!_countEm
+  const ddate = new Date();
+  const yyyy = ddate.getFullYear();
+  let mm = ddate.getMonth() + 1;
+  let dd = ddate.getDate();
+
+  let formatDate = `${dd}/ ${mm}/ ${yyyy}`;
+
+  // console.log(formatDate);
+
+  const generateRandNumb = (max) => {
+    return Math.floor(Math.random() * max);
+  };
+
   const handleFollowArtist = (e, incomingIntel) => {
-    console.log(`User requested to follow the artist:`);
-    console.log(incomingIntel);
+    // console.log(`User requested to follow the artist:`);
+    // console.log(incomingIntel);
     const followTheArtist = async () => {
       const followRef = await addDoc(followingArtistzCollection, incomingIntel); //? Getting the reference of the process.
     };
@@ -209,8 +224,8 @@ export default function Dashboard(props) {
   };
 
   const handleFollowSong = (e, incomingIntel) => {
-    console.log(`User requested to follow the artist:`);
-    console.log(incomingIntel);
+    // console.log(`User requested to follow the artist:`);
+    // console.log(incomingIntel);
     const followTheSong = async () => {
       const followRef = await addDoc(followingSongzCollection, incomingIntel); //? Getting the reference of the process.
     };
@@ -219,8 +234,8 @@ export default function Dashboard(props) {
   };
 
   const handleFollowPlaylist = (e, incomingIntel) => {
-    console.log(`User requested to follow the artist:`);
-    console.log(incomingIntel);
+    // console.log(`User requested to follow the artist:`);
+    // console.log(incomingIntel);
     const followThePlaylist = async () => {
       const followRef = await addDoc(
         followingPlaylistzCollection,
@@ -448,6 +463,8 @@ export default function Dashboard(props) {
                       songArtistz: track.album.artists,
                       songAlbumName: track.album.name,
                       songDuration: track.duration_ms,
+                      time: ddate,
+                      date: formatDate,
                     })
                   }
                 >
@@ -651,11 +668,16 @@ export default function Dashboard(props) {
                       userName: loggedUser.userName,
                       artistID: artist.id,
                       artistName: artist.name,
-                      artistPic: artist.images[0].url,
+                      artistPic:
+                        typeof artist.images[0] != "undefined"
+                          ? artist.images[0].url
+                          : defArtistPic,
                       artistPopularity: artist.popularity,
                       artistSpotifyLink: artist.external_urls["spotify"],
                       artistGenrez: artist.genres,
                       artistFollowerCount: artist.followers["total"],
+                      time: ddate,
+                      date: formatDate,
                     })
                   }
                 >
@@ -861,6 +883,8 @@ export default function Dashboard(props) {
                       playlistPic: playlist.images[0].url,
                       playlistTrackCount: playlist.tracks.total,
                       playlistUrl: playlist.external_urls["spotify"],
+                      time: ddate,
+                      date: formatDate,
                     })
                   }
                 >
@@ -974,6 +998,7 @@ export default function Dashboard(props) {
           loggedUser={loggedUser}
           user={loggedUser}
           toggleProfile={setIsProfile}
+          handleTraffic={handleTraffic}
         />
       )}
 
@@ -997,7 +1022,15 @@ export default function Dashboard(props) {
             </svg>
           </a>
           &nbsp;|&nbsp;
-          <a onClick={(e) => handlePaging(e, "Followin' Artists")}>
+          <a
+            onClick={(e) => {
+              console.log(
+                "%cUser clicked for 'Artists' page.",
+                "color: orange"
+              );
+              handlePaging(e, "Followin' Artists");
+            }}
+          >
             Your Artists&nbsp;
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -1011,7 +1044,15 @@ export default function Dashboard(props) {
             </svg>
           </a>
           &nbsp;|&nbsp;
-          <a onClick={(e) => handlePaging(e, "Followin' Songs")}>
+          <a
+            onClick={(e) => {
+              console.log(
+                "%cUser clicked for Your Tracks page.",
+                "color: orange"
+              );
+              handlePaging(e, "Followin' Songs");
+            }}
+          >
             Your Tracks&nbsp;
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -1031,7 +1072,15 @@ export default function Dashboard(props) {
           Completed&nbsp;&nbsp;<i className="fa-solid fa-check fa-lg"></i>
         </a>
         &nbsp;|&nbsp; */}
-          <a onClick={(e) => handlePaging(e, "Followin' Playlists")}>
+          <a
+            onClick={(e) => {
+              console.log(
+                "%cUser clicked for 'Your Playlist' page.",
+                "color: orange"
+              );
+              handlePaging(e, "Followin' Playlists");
+            }}
+          >
             Your Playlists&nbsp;
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -1052,7 +1101,16 @@ export default function Dashboard(props) {
           </a>
           &nbsp;|&nbsp;
           <a
-            onClick={(e) => {
+            onClick={() => {
+              console.log(
+                "%cUser clicked for 'Profile' page.",
+                "color: orange"
+              );
+              console.log("User now at 'Profile' page.");
+              console.log(
+                "%cThe database was read, user' s intel showing up..",
+                "color: orange"
+              );
               setIsProfile((prev) => !prev);
             }}
           >
@@ -1149,6 +1207,8 @@ export default function Dashboard(props) {
                     handleNihilGitHub(e, {
                       userID: loggedUser.id,
                       userName: loggedUser.userName,
+                      time: ddate,
+                      date: formatDate,
                     });
                     window.open("https://github.com/Nihilnia", "_blank");
                   }}
