@@ -27,7 +27,7 @@ The technologies I used for this project include:
 
 ## Usage
 You can [view the live demo](https://spotifyapiproject.netlify.app) hosted on Netlify.
-Simply go to website, create your own account and login.
+Simply go to website, create your own account and login. <br/>
 Search for anything; Tracks, artists and playlists.
 If you allow the cookies you can play the songs.
 
