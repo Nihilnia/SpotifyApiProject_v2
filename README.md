@@ -2,7 +2,7 @@
 
 ![](https://raw.githubusercontent.com/Nihilnia/SpotifyApiProject_v2/main/public/thumbnail_2.png)<br/>
 A full-stack api project that allows you to create your own account, search & follow for songs, artists and playlists. <br/>
-If you allow cookies you can play the songs.
+If you allow the cookies you can play the songs.
 
 ## Table of Contents
 - [Introduction](#introduction)
