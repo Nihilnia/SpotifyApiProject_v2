@@ -14,7 +14,7 @@ Welcome to my portfolio repository!<br/>This is where I showcase my best work an
 
 ## Introduction
 
-In this repository, you will find a collection of my best work and projects. Each project has its own folder, containing a detailed README file with information about the problem I solved, the technologies I used, and the outcome. You can also find live demos, screenshots, and code snippets to help you understand each project better. 
+A full-stack api project that allows you to create your own account, search & follow for songs, artists and playlists.
 
 ## Technologies
 
@@ -23,7 +23,7 @@ The technologies I used in this portfolio include:
 - ![HTML](https://raw.githubusercontent.com/Nihilnia/GithubBadges/d789604b7dce1b979d009e0751f7d4a26c07a2f9/HTML.svg)
 - ![CSS](https://raw.githubusercontent.com/Nihilnia/GithubBadges/d789604b7dce1b979d009e0751f7d4a26c07a2f9/CSS.svg)
 - ![JavaScript](https://raw.githubusercontent.com/Nihilnia/GithubBadges/d789604b7dce1b979d009e0751f7d4a26c07a2f9/JavaScript.svg)
-- ![JQuery](https://raw.githubusercontent.com/Nihilnia/GithubBadges/d789604b7dce1b979d009e0751f7d4a26c07a2f9/JQuery.svg)
+- ![ReactJS](https://raw.githubusercontent.com/Nihilnia/GithubBadges/4cd8f1c7b53b4cc938851028910a5b4feec675be/ReactJS.svg)
 - ![Bootstrap](https://raw.githubusercontent.com/Nihilnia/GithubBadges/0b7f184049c916a280364eef477d4acbdebbb68b/Bootstrap.svg)
 - ![Font Awesome](https://raw.githubusercontent.com/Nihilnia/GithubBadges/0b7f184049c916a280364eef477d4acbdebbb68b/FontAwesome.svg)
 - ![Visual Studio Code](https://raw.githubusercontent.com/Nihilnia/GithubBadges/e9692944c51f668445da9f0cfba33112102a3484/VSCode.svg)
