@@ -33,6 +33,10 @@ If you allow the cookies you can play the songs. <br/>
 
 <img src="https://github.com/Nihilnia/SpotifyApiProject_v2/blob/main/public/gif_1.gif" width="830">
 
+If you follow anthing it' s gonna save on your own profile. <br/>
+You can see how many tracks, artists or playlist you are following. <br/>
+If you want to see which one' s you are following you can see them.
+
 <!-- <h2>Profile</h2>
 You can see how many traks, artists or playlist you' re following.
 <img src="https://raw.githubusercontent.com/Nihilnia/SpotifyApiProject_v2/main/public/thumbnail_3.png" width="830"> -->
