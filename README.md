@@ -30,6 +30,7 @@ You can [view the live demo](https://spotifyapiproject.netlify.app) hosted on Ne
 Simply go to website, create your own account and login. <br/>
 Search for anything; Tracks, artists and playlists.
 If you allow the cookies you can play the songs.
+![](https://github.com/Nihilnia/SpotifyApiProject_v2/blob/main/public/gif_1.gif)<br/>
 
 
 ## Contributing
