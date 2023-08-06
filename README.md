@@ -1,6 +1,6 @@
 # SpotifyApiProject_v2 [![Live on Netlify](https://raw.githubusercontent.com/Nihilnia/GithubBadges/e14078343be44292c313b478de702e34fcdf556e/HostedOn_Netlify.svg)](https://spotifyapiproject.netlify.app) [![Live Demo](https://raw.githubusercontent.com/Nihilnia/GithubBadges/e14078343be44292c313b478de702e34fcdf556e/liveDemo_Blue.svg)](https://spotifyapiproject.netlify.app)
 
-![](https://im5.ezgif.com/tmp/ezgif-5-dd483a9305.gif)<br/>
+![](https://raw.githubusercontent.com/Nihilnia/SpotifyApiProject_v2/main/public/thumbnail_2.png)<br/>
 A full-stack api project that allows you to create your own account, search & follow for songs, artists and playlists. <br/>
 
 ## Table of Contents
@@ -30,6 +30,7 @@ You can [view the live demo](https://spotifyapiproject.netlify.app) hosted on Ne
 Simply go to website, create your own account and login. <br/>
 Search for anything; Tracks, artists and playlists.
 If you allow the cookies you can play the songs.
+![](https://github.com/Nihilnia/SpotifyApiProject_v2/blob/main/public/gif_1.gif)<br/>
 
 
 ## Contributing
