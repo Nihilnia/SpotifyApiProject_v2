@@ -30,12 +30,12 @@ You can [view the live demo](https://spotifyapiproject.netlify.app) hosted on Ne
 Simply go to website, create your own account and login. <br/>
 Search for anything; Tracks, artists and playlists.
 If you allow the cookies you can play the songs. <br/>
-![](https://github.com/Nihilnia/SpotifyApiProject_v2/blob/main/public/gif_1.gif)<br/>
+
+<img src="https://github.com/Nihilnia/SpotifyApiProject_v2/blob/main/public/gif_1.gif" width="830">
 
 <h2></h2>
 When you follow anything it' s saving on firestore database.
-
-![](https://raw.githubusercontent.com/Nihilnia/SpotifyApiProject_v2/main/public/thumbnail_3.png)<br/>
+<img src="https://raw.githubusercontent.com/Nihilnia/SpotifyApiProject_v2/main/public/thumbnail_3.png" width="830">
 
 ## Contributing
 If you would like to contribute to my project, feel free to submit a pull request. <br/>
