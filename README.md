@@ -33,7 +33,7 @@ If you allow the cookies you can play the songs. <br/>
 
 <img src="https://github.com/Nihilnia/SpotifyApiProject_v2/blob/main/public/gif_1.gif" width="830">
 
-<h2></h2>
+<h2>Profile</h2>
 You can see how many traks, artists or playlist you' re following.
 <img src="https://raw.githubusercontent.com/Nihilnia/SpotifyApiProject_v2/main/public/thumbnail_3.png" width="830">
 
