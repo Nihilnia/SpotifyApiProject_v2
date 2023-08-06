@@ -19,6 +19,7 @@ The technologies I used for this project include:
 - ![JavaScript](https://raw.githubusercontent.com/Nihilnia/GithubBadges/d789604b7dce1b979d009e0751f7d4a26c07a2f9/JavaScript.svg)
 - ![ReactJS](https://raw.githubusercontent.com/Nihilnia/GithubBadges/4cd8f1c7b53b4cc938851028910a5b4feec675be/ReactJS.svg)
 - ![Firestore](https://raw.githubusercontent.com/Nihilnia/GithubBadges/4cd8f1c7b53b4cc938851028910a5b4feec675be/Firebase.svg)
+- ![NPM](https://raw.githubusercontent.com/Nihilnia/GithubBadges/e14078343be44292c313b478de702e34fcdf556e/NPM.svg)
 - ![Bootstrap](https://raw.githubusercontent.com/Nihilnia/GithubBadges/0b7f184049c916a280364eef477d4acbdebbb68b/Bootstrap.svg)
 - ![Font Awesome](https://raw.githubusercontent.com/Nihilnia/GithubBadges/0b7f184049c916a280364eef477d4acbdebbb68b/FontAwesome.svg)
 - ![Visual Studio Code](https://raw.githubusercontent.com/Nihilnia/GithubBadges/e9692944c51f668445da9f0cfba33112102a3484/VSCode.svg)
