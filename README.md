@@ -26,9 +26,9 @@ The technologies I used for this project include:
 - ![Photoshop](https://raw.githubusercontent.com/Nihilnia/GithubBadges/d789604b7dce1b979d009e0751f7d4a26c07a2f9/Photoshop.svg)
 
 ## Usage
-You can [view the live demo](https://spotifyapiproject.netlify.app) hosted on Netlify. <br/>
+You can [view the live demo](https://spotifyapiproject.netlify.app) hosted on Netlify.
 Simply go to website, create your own account and login. <br/><br/>
-Search for anything; Tracks, artists and playlists. <br/>
+Search for anything; Tracks, artists and playlists.
 If you allow the cookies you can play the songs.
 
 
