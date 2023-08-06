@@ -1,6 +1,6 @@
 # SpotifyApiProject_v2 [![Live on Github Pages](https://raw.githubusercontent.com/Nihilnia/GithubBadges/d789604b7dce1b979d009e0751f7d4a26c07a2f9/liveOnGitHubPages.svg)](https://nihilnia.github.io/Portfolio) [![LinkedIn](https://raw.githubusercontent.com/Nihilnia/GithubBadges/d789604b7dce1b979d009e0751f7d4a26c07a2f9/Linkedin.svg)](https://www.linkedin.com/in/okantopal)
 
-![](https://raw.githubusercontent.com/Nihilnia/SpotifyApiProject_v2/main/public/thumbnail_0.png)<br/>
+![](https://raw.githubusercontent.com/Nihilnia/SpotifyApiProject_v2/main/public/thumbnail_1.png)<br/>
 A full-stack api project that allows you to create your own account, search & follow for songs, artists and playlists.
 
 ## Table of Contents
