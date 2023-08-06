@@ -2,7 +2,6 @@
 
 ![](https://raw.githubusercontent.com/Nihilnia/SpotifyApiProject_v2/main/public/thumbnail_2.png)<br/>
 A full-stack api project that allows you to create your own account, search & follow for songs, artists and playlists. <br/>
-If you allow the cookies you can play the songs.
 
 ## Table of Contents
 - [Introduction](#introduction)
@@ -27,7 +26,10 @@ The technologies I used for this project include:
 
 ## Usage
 You can [view the live demo](https://spotifyapiproject.netlify.app) hosted on Netlify. <br/>
-Simply go to website, create your own account and login.
+Simply go to website, create your own account and login. <br/>
+Search for anything; Tracks, artists and playlists. <br/>
+If you allow the cookies you can play the songs.
+
 
 ## Contributing
 If you would like to contribute to my project, feel free to submit a pull request. I am open to new ideas and suggestions for improving my work. 
