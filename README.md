@@ -12,10 +12,6 @@ A full-stack api project that allows you to create your own account, search & fo
 - [Contributing](#contributing)
 - [License](#license)
 
-## Introduction
-
-In this repository, you will find a collection of my best work and projects. Each project has its own folder, containing a detailed README file with information about the problem I solved, the technologies I used, and the outcome. You can also find live demos, screenshots, and code snippets to help you understand each project better. 
-
 ## Technologies
 
 The technologies I used for this project include:
@@ -30,11 +26,11 @@ The technologies I used for this project include:
 - ![Photoshop](https://raw.githubusercontent.com/Nihilnia/GithubBadges/d789604b7dce1b979d009e0751f7d4a26c07a2f9/Photoshop.svg)
 
 ## Usage
-You can [view the live demo](https://nihilnia.github.io/Portfolio) hosted on GitHub Pages.
-To view my portfolio, simply open the index.html file in your web browser. You can also navigate to each project folder and open the README file for more information about each project.
+You can [view the live demo](https://spotifyapiproject.netlify.app) hosted on Netlify.
+Simply go to website, create your own account and login.
 
 ## Contributing
-If you would like to contribute to my portfolio, feel free to submit a pull request. I am open to new ideas and suggestions for improving my work. 
+If you would like to contribute to my project, feel free to submit a pull request. I am open to new ideas and suggestions for improving my work. 
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE](https://github.com/Nihilnia/Portfolio/blob/main/LICENSE.md) file for details.<br/>
