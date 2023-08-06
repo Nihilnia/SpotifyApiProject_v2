@@ -1,6 +1,6 @@
 # SpotifyApiProject_v2 [![Live on Github Pages](https://raw.githubusercontent.com/Nihilnia/GithubBadges/d789604b7dce1b979d009e0751f7d4a26c07a2f9/liveOnGitHubPages.svg)](https://nihilnia.github.io/Portfolio) [![LinkedIn](https://raw.githubusercontent.com/Nihilnia/GithubBadges/d789604b7dce1b979d009e0751f7d4a26c07a2f9/Linkedin.svg)](https://www.linkedin.com/in/okantopal)
 
-![](https://raw.githubusercontent.com/Nihilnia/ProjectsGifs/main/Portfolio.gif)<br/>
+![](https://raw.githubusercontent.com/Nihilnia/SpotifyApiProject_v2/main/public/projectThumbnail.png)<br/>
 Welcome to my portfolio repository!<br/>This is where I showcase my best work and projects to potential employers and collaborators. 
 
 ## Table of Contents
