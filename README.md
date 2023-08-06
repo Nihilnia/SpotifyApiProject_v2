@@ -7,8 +7,6 @@ If you allow the cookies you can play the songs.
 ## Table of Contents
 - [Introduction](#introduction)
 - [Technologies](#technologies)
-- [Projects](#projects)
-- [Installation](#installation)
 - [Usage](#usage)
 - [Contributing](#contributing)
 - [License](#license)
