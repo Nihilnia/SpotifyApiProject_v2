@@ -26,7 +26,6 @@ The technologies I used for this project include:
 - ![Photoshop](https://raw.githubusercontent.com/Nihilnia/GithubBadges/d789604b7dce1b979d009e0751f7d4a26c07a2f9/Photoshop.svg)
 
 ## Usage
-<img src="https://github.com/Nihilnia/SpotifyApiProject_v2/blob/main/public/thumbnail_5.png" width="830">
 You can [view the live demo](https://spotifyapiproject.netlify.app) hosted on Netlify.
 Simply go to website, create your own account and login. <br/>
 Search for anything; Tracks, artists and playlists.
@@ -38,6 +37,7 @@ If you follow anthing it' s gonna save on your own profile. <br/>
 You can see how many tracks, artists or playlist you are following. <br/>
 If you want to see which one' s you are following you can see them in their own pages.
 
+<img src="https://github.com/Nihilnia/SpotifyApiProject_v2/blob/main/public/thumbnail_5.png" width="830">
 <img src="https://github.com/Nihilnia/SpotifyApiProject_v2/blob/main/public/thumbnail_4.png" width="830">
 
 
