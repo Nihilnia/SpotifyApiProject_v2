@@ -33,7 +33,8 @@ If you allow the cookies you can play the songs.
 
 
 ## Contributing
-If you would like to contribute to my project, feel free to submit a pull request. I am open to new ideas and suggestions for improving my work. 
+If you would like to contribute to my project, feel free to submit a pull request. <br/>
+I am open to new ideas and suggestions for improving my work. 
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE](https://github.com/Nihilnia/Portfolio/blob/main/LICENSE.md) file for details.<br/>
