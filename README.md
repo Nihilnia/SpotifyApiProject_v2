@@ -50,6 +50,6 @@ If you would like to contribute to my project, feel free to submit a pull reques
 I am open to new ideas and suggestions for improving my work. 
 
 ## License
-This project is licensed under the MIT License - see the [LICENSE](https://github.com/Nihilnia/Portfolio/blob/main/LICENSE.md) file for details.<br/>
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/Nihilnia/SpotifyApiProject_v2/blob/main/LICENSE) file for details.<br/>
 Feel free to use and modify the code as needed.<br/>
 [![License - MIT](https://img.shields.io/badge/License-MIT-8CB904)](https://choosealicense.com/licenses/mit/)
